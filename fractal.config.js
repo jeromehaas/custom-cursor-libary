@@ -3,7 +3,7 @@
 const fractal = module.exports = require('@frctl/fractal').create();
 
 /* SET TITLES */
-fractal.set('project.title', 'Reiheacht | Component Libary');
+fractal.set('project.title', 'Custom Cursor | Component Libary');
 fractal.set('project.version', 'v1.0');
 fractal.set('project.author', 'jeromehaas');
 
