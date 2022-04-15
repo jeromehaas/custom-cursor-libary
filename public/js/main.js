@@ -1,4 +1,4 @@
-import HelloWorld from '../../components/hello-world/hello-world';
+import Virgin from '../../components/virgin/virgin';
 
-const helloWorld = new HelloWorld();
-helloWorld.init();
+const virgin = new Virgin();
+virgin.init();

@@ -9,3 +9,23 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Roboto";
+  src:
+    local('fonts/roboto'), url("/fonts/roboto/roboto-thin.ttf") format("ttf"),
+    local('fonts/roboto'), url("/fonts/roboto/roboto-thin.woff") format("woff"),
+    local('fonts/roboto'), url("/fonts/roboto/roboto-thin.woff2") format("woff2");
+  font-display: block;
+	font-weight: 300;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src:
+    local('fonts/roboto'), url("/fonts/roboto/roboto-bold.ttf") format("ttf"),
+    local('fonts/roboto'), url("/fonts/roboto/roboto-bold.woff") format("woff"),
+    local('fonts/roboto'), url("/fonts/roboto/roboto-bold.woff2") format("woff2");
+  font-display: block;
+	font-weight: 700;
+}

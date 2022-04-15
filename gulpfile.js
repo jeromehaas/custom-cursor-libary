@@ -1,23 +1,13 @@
 const gulp = require('gulp');
-const { series, parallel, dest } = require('gulp');
+const { series, dest } = require('gulp');
 const sourcemaps = require('gulp-sourcemaps');
 const browserSync = require('browser-sync').create();
 const cssnano = require('gulp-cssnano');
 const autoprefixer = require('gulp-autoprefixer');
-const uglify = require('gulp-uglify');
-const rename = require('gulp-rename');
 const concat = require('gulp-concat');
-const imagemin = require('gulp-imagemin');
-const cache = require('gulp-cache');
-const babel = require('gulp-babel');
-const del = require('del');
 const plumber = require('gulp-plumber');
 const notifier = require('gulp-notifier');
-const svgmin = require('gulp-svgmin');
 const sass = require('gulp-sass')(require('sass'));
-const favicons = require('gulp-favicons');
-const svgSprite = require('gulp-svg-sprite');
-const gulpCopy = require('gulp-copy');
 const webpackConfig = require('./webpack.config.js');
 const webpackStream = require('webpack-stream');
 
@@ -40,8 +30,8 @@ const filePaths = {
 		dist: ['./public/css']
 	},
 	js: {
-		src: ['./public/js/main.js', './components/**/*.js'],
-		dist: ['./public/js', '../craft/web/js']
+		src: ['./public/js/main.js', './public/js/basic-cursor.js', './components/**/*.js'],
+		dist: ['./public/js']
 	}
 }
 
