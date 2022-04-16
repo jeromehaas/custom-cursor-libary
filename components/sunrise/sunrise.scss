@@ -1,0 +1,67 @@
+.sunrise {
+	
+	&__content, .content {
+		position: absolute;
+		mix-blend-mode: screen;
+		background: white;
+		top: 0;
+		left: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+		width: 100vw;
+
+		&__text {
+			color: $orange;
+			font-size: 125px;
+			font-weight: 600;
+	}
+
+}
+	
+	&__cursor {
+		position: fixed;
+		background: $white;
+		border: 3px solid $orange;
+		border-radius: 50%;
+		width: 20px;
+		height: 20px;
+		margin: -10px 0 0 -10px;
+		overflow: hidden;
+		user-select: none;
+		z-index: 100000;
+	}
+	
+	&__shape, .shape {
+		position: relative;
+		height: 100vh;
+		width: 100vw;	
+		background: #2128bd;
+		overflow: hidden;
+		
+		&__item {
+			position: absolute;
+			border-radius: 50%;
+			
+			$shapes: (
+				#ee6502: 650px,
+				#ffe5e3: 440px,
+				#f2206d: 270px,
+				);
+				
+				@each $color, $size in $shapes {
+					&--#{index($shapes, ($color $size))} {
+						background: $color;
+						width: $size;
+						height: $size;
+						margin: math.div(-$size, 2) 0 0 math.div(-$size, 2);
+					}
+				}
+				}
+				
+	}
+
+
+
+}

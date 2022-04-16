@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
 const gulp = require('gulp');
 const { series, dest } = require('gulp');
 const sourcemaps = require('gulp-sourcemaps');
@@ -8,7 +9,6 @@ const concat = require('gulp-concat');
 const plumber = require('gulp-plumber');
 const notifier = require('gulp-notifier');
 const sass = require('gulp-sass')(require('sass'));
-const typescript = require('gulp-typescript');
 const webpackConfig = require('./webpack.config.js');
 const webpackStream = require('webpack-stream');
 
@@ -16,6 +16,7 @@ const webpackStream = require('webpack-stream');
 const filePaths = {
 	scss: {
 		src: [
+			'./public/scss/configs/rules.scss', 
 			'./public/scss/configs/reset.scss', 
 			'./public/scss/configs/icons.scss', 
 			'./public/scss/configs/fonts.scss', 
@@ -34,33 +35,33 @@ const filePaths = {
 		src: ['./public/js/main.ts', './components/**/*.ts'],
 		dist: ['./public/js']
 	}
-}
+};
 
 // MESSAGES FOR NOTIFIER
 notifier.defaults({
 	messages: {
 		scss: 'CSS compiled!',
-		js: "JS compiled!",
+		js: 'JS compiled!',
 	},
 	prefix: '===>',
 	suffix: '<===',
 	exclusions: '.map'
-})
+});
 
 // SCSS
 const scssTask = (done) => {
-	gulp.src(filePaths.scss.src, {"allowEmpty": true})
-	.pipe(plumber({errorHandler: notifier.error}))
-	.pipe(concat('main.min.css'))
-	.pipe(sourcemaps.init())
-	.pipe(sass())
-	.pipe(autoprefixer())
-	.pipe(cssnano())
-	.pipe(sourcemaps.write('.'))
-	.pipe(dest(filePaths.scss.dist[0]))
-	.pipe(notifier.success('scss'));
+	gulp.src(filePaths.scss.src, {'allowEmpty': true})
+		.pipe(plumber({errorHandler: notifier.error}))
+		.pipe(concat('main.min.css'))
+		.pipe(sourcemaps.init())
+		.pipe(sass())
+		.pipe(autoprefixer())
+		.pipe(cssnano())
+		.pipe(sourcemaps.write('.'))
+		.pipe(dest(filePaths.scss.dist[0]))
+		.pipe(notifier.success('scss'));
 	done();
-}
+};
 	
 // JS TASK
 const jsTask = (done) => {
@@ -70,7 +71,7 @@ const jsTask = (done) => {
 		.pipe(dest(filePaths.js.dist[0]))
 		.pipe(notifier.success('js'));
 	done();
-}
+};
 
 // WATCH TASK
 const watchTask = () => {
@@ -83,11 +84,11 @@ const watchTask = () => {
 		},
 	});
 	gulp.watch('./index.html').on('change', browserSync.reload);
-	gulp.watch(filePaths.scss.src, scssTask).on("change", browserSync.reload);
-	gulp.watch(filePaths.js.src, jsTask).on("change", browserSync.reload);
-}
+	gulp.watch(filePaths.scss.src, scssTask).on('change', browserSync.reload);
+	gulp.watch(filePaths.js.src, jsTask).on('change', browserSync.reload);
+};
 
 
 module.exports = {
 	default: series(scssTask, jsTask, watchTask)
-}
+};
