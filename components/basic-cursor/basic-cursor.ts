@@ -21,7 +21,7 @@ class BasicCursor {
 		console.log(`Initialize:`);
 		console.log(
 		`%c ${this.name}`, 
-		'font-weight: bold; font-size: 50px;color: #eab5de;');
+		'font-weight: bold; font-size: 50px;color: #000000;');
 	};
 
 	replaceCursors = (): void => {

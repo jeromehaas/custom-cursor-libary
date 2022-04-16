@@ -5264,9 +5264,9 @@ growly@^1.3.0:
   resolved "https://registry.npmjs.org/growly/-/growly-1.3.0.tgz"
   integrity sha1-8QdIy+dq+WS3yWyTxrzCivEgwIE=
 
-gsap@^3.9.1:
+gsap@^3.10.3:
   version "3.10.3"
-  resolved "https://registry.npmjs.org/gsap/-/gsap-3.10.3.tgz"
+  resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.10.3.tgz#368f03123ae4f9e48fe9c8912a6a92ba31c56194"
   integrity sha512-O4P5mC6awoo0uSemZ1kS1Nm52I4/3gC8gy6ws6VFXvR1KmA4oRlBY/ZI4+LWsH0MoSDZrpwNyF9FAkB37UTGVg==
 
 gulp-autoprefixer@^8.0.0:

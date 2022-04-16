@@ -19,7 +19,7 @@ class Virgin extends BasicCursor {
 	};
 
 	addEventListener = () => {
-		window.addEventListener('pointermove', (event) => {
+		window.addEventListener('pointermove', (event: MouseEvent) => {
 			this.updateCursorPosition(event);
 			this.moveCursor();
 		});
