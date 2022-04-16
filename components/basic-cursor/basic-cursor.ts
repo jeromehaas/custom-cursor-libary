@@ -26,7 +26,7 @@ class BasicCursor {
 
 	replaceCursors = (): void => {
 		this.cursor.element.style.display = 'block';	
-		document.body.style.cursor = 'none';
+		// document.body.style.cursor = 'none';
 		window.removeEventListener('mousemove', this.replaceCursors);
 	};
 

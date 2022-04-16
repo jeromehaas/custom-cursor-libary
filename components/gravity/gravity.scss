@@ -1,0 +1,57 @@
+.gravity {
+	background-color: $blue;	
+	display: grid;
+  justify-content: center;
+  align-content: center;
+
+	&__content, .content {
+		font-size: 48px;
+		font-weight: 600;
+		border: 3px solid $white;
+		aspect-ratio: 1 / 1;
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-weight: 300;
+		padding: 30px;
+		z-index: 50;
+		cursor: pointer;
+
+		&__text {
+			color: $white;
+		}
+
+	}
+
+	&__cursor, .cursor {
+		pointer-events: none;
+
+
+		&__main {
+			// display: none;
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 8px;
+			height: 8px;
+			background-color: $white;
+			transform: translate(-50%, -50%);
+			border-radius: 50%;
+			z-index: 20;
+		}
+		
+		&__follower {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 32px;
+			height: 32px;
+			transform: translate(-50%, -50%);
+			background-color: $orange;
+			border-radius: 50%;
+		}
+		
+	}
+
+}
