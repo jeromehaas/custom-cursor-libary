@@ -1,3 +1,6 @@
 {
-	"typescript.validate.enable": true
+	"typescript.validate.enable": true,
+	"editor.formatOnSave": true,
+	"prettier.jsxSingleQuote": true,
+	"prettier.singleQuote": true
 }

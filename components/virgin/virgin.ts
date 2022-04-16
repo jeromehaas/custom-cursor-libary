@@ -1,4 +1,4 @@
-import BasicCursor from "../basic-cursor/basic-cursor";
+import BasicCursor from '../basic-cursor/basic-cursor';
 import { cursorInterface } from './virgin.interface';
 
 class Virgin extends BasicCursor {
@@ -12,7 +12,7 @@ class Virgin extends BasicCursor {
 				y: null
 			}
 		};
-	};
+	}
 
 	run = () => {
 		this.addEventListener();
@@ -25,7 +25,7 @@ class Virgin extends BasicCursor {
 		});
 		window.addEventListener('mousedown', () => this.cursorStyleBig());
 		window.addEventListener('mouseup', () => this.cursorStyleDefault());
-	}
+	};
 
 	updateCursorPosition = (event: MouseEvent) => {
 		this.cursor.position.x = event.clientX;
@@ -43,7 +43,7 @@ class Virgin extends BasicCursor {
 			this.hideCursor();
 		} else {
 			this.cursorStyleDefault();
-		};
+		}
 	};
 
 	cursorStyleBig = () => {
@@ -58,6 +58,6 @@ class Virgin extends BasicCursor {
 		this.cursor.element.style.transform = 'scale(0.1) translate(-50%, -50%)';
 	};
 
-};
+}
 
 export default Virgin;

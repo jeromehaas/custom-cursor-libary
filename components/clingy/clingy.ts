@@ -1,6 +1,6 @@
 import BasicCursor from '../basic-cursor/basic-cursor';
 import { cursorInterface, mainInterface, followerInterface } from './clingy.interface';
-import { gsap } from "gsap";
+import { gsap } from 'gsap';
 
 class Clingy extends BasicCursor {
 
@@ -15,19 +15,11 @@ class Clingy extends BasicCursor {
 		};
 		this.main = {
 			element: document.querySelector('.cursor__main'),
-			position: {
-				x: null,
-				y: null
-			}
 		};
 		this.follower = {
-		 element: document.querySelector('.cursor__follower'),
-		 position: {
-			 x: null,
-			 y: null
-		 }
+			element: document.querySelector('.cursor__follower'),
 		};
-	}; 
+	}
 
 	run = () => {
 		this.addEventListener();	
@@ -45,7 +37,7 @@ class Clingy extends BasicCursor {
 			this.hideCursor();
 		} else {
 			this.showCursor();
-		};
+		}
 	};
 
 	showCursor() {
@@ -61,7 +53,7 @@ class Clingy extends BasicCursor {
 			width: 16,
 			height: 16
 		});
-	};
+	}
 
 	hideCursor() {
 		gsap.to([this.main.element, this.follower.element], {
@@ -70,7 +62,7 @@ class Clingy extends BasicCursor {
 			width: 0,
 			height: 0
 		});
-	};
+	}
 	
 	moveCursor() {
 		this.updateCursorStyle();
@@ -84,13 +76,13 @@ class Clingy extends BasicCursor {
 			duration: 0.75,
 			ease: 'circ.out'
 		});
-	};
+	}
 
 	updateCursorPosition = (event: MouseEvent) => {
 		this.cursor.position.x = event.clientX;
 		this.cursor.position.y = event.clientY;
 	};
 	
-};
+}
 
 export default Clingy;
