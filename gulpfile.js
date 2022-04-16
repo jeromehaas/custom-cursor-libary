@@ -8,6 +8,7 @@ const concat = require('gulp-concat');
 const plumber = require('gulp-plumber');
 const notifier = require('gulp-notifier');
 const sass = require('gulp-sass')(require('sass'));
+const typescript = require('gulp-typescript');
 const webpackConfig = require('./webpack.config.js');
 const webpackStream = require('webpack-stream');
 
@@ -30,7 +31,7 @@ const filePaths = {
 		dist: ['./public/css']
 	},
 	js: {
-		src: ['./public/js/main.js', './public/js/basic-cursor.js', './components/**/*.js'],
+		src: ['./public/js/main.ts', './components/**/*.ts'],
 		dist: ['./public/js']
 	}
 }

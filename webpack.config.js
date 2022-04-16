@@ -1,9 +1,9 @@
 const path = require('path');
 
 module.exports = {
-	entry: './public/js/main.js',
+	entry: './public/js/main.ts',
 	resolve: {
-		extensions: ['.webpack.js', '.js']
+		extensions: ['.webpack.js', '.js', '.ts']
 	},
 	mode: 'development',
 	output: {
@@ -21,7 +21,12 @@ module.exports = {
 						presets: ['@babel/env']
 					}
 				}
-			}
+			},
+			{
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
 		]
 	}
 }

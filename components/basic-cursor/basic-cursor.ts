@@ -1,13 +1,15 @@
+import { cursorInterface } from './basic-cursor.interface'
+
 class BasicCursor {
 
-	constructor(name) {
+	constructor(public name: string, public cursor?: cursorInterface) {
 		this.name = name;
-		this.cursor = {
+		this.cursor  = {
 			element: document.querySelector('.cursor')
 		};
 	};
 
-	init = () => {
+	init = (): void => {
 		if (document.querySelector(`.js-${this.name}`)) {
 			this.print();
 			this.show();
@@ -15,22 +17,24 @@ class BasicCursor {
 		};
 	};
 
-	print = () => {
+	print = (): void => {
 		console.log(`Initialize:`);
 		console.log(
 		`%c ${this.name}`, 
 		'font-weight: bold; font-size: 50px;color: #eab5de;');
 	};
 
-	replaceCursors = () => {
+	replaceCursors = (): void => {
 		this.cursor.element.style.display = 'block'	
 		document.body.style.cursor = 'none';
 		window.removeEventListener('mousemove', this.replaceCursors);
 	};
 
-	show = () => {
+	show = (): void => {
 		window.addEventListener('mousemove', this.replaceCursors);
 	};
+
+	run = () => {};
 
 
 };

@@ -1,8 +1,9 @@
-import BasicCursor from "../../public/js/basic-cursor";
+import BasicCursor from "../basic-cursor/basic-cursor";
+import { cursorInterface } from './virgin.interface';
 
 class Virgin extends BasicCursor {
 
-	constructor() {
+	constructor(public cursor?: cursorInterface) {
 		super('virgin');
 		this.cursor = {
 			element: document.querySelector('.virgin__cursor'),
@@ -26,7 +27,7 @@ class Virgin extends BasicCursor {
 		window.addEventListener('mouseup', () => this.cursorStyleDefault());
 	}
 
-	updateCursorPosition = (event) => {
+	updateCursorPosition = (event: MouseEvent) => {
 		this.cursor.position.x = event.clientX;
 		this.cursor.position.y = event.clientY;
 	};
